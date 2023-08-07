@@ -102,12 +102,14 @@ class ViewController: UIViewController {
         navigationController?.pushViewController(secondVC, animated: true)
     }
     
-    func randomFilm(third: ThirdViewController) {
-           if let randomFilm = movies.randomElement() {
-               third.nameLabel.text = randomFilm
-           }
-
-    }
+//    func randomFilm() -> String? {
+//        if let randomFilm = movies.randomElement() {
+//            return randomFilm
+//        } else {
+//            return nil
+//        }
+//        
+//    }
 }
 
 

@@ -4,7 +4,7 @@ class SecondViewController: UIViewController {
     
     var movies: [String] = []
     var selectedMovie: String? // Свойство для хранения выбранного случайного фильма
-
+    
     
     lazy var randomButton: UIButton = {
         let button = UIButton()
@@ -30,7 +30,7 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         
         setupViews()
         setupConstraints()
@@ -55,10 +55,9 @@ class SecondViewController: UIViewController {
     
     
     @objc func randomButtonTapped() {
-        let firstVC = ViewController()
         let thirdVC = ThirdViewController() // Передаем массив фильмов в инициализатор ThirdViewController
-        firstVC.randomFilm(third: thirdVC)
-            navigationController?.pushViewController(thirdVC, animated: true)
-        }
-    
+        thirdVC.nameLabel.text = movies.randomElement()
+        navigationController?.pushViewController(thirdVC, animated: true)
+        
+    }
 }

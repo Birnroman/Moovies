@@ -59,6 +59,7 @@ class ThirdViewController: UIViewController {
         button.backgroundColor = .transparentGrayColor
         button.titleLabel?.textColor = .white
         button.layer.cornerRadius = 8
+        button.addTarget(self, action: #selector(anotherButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -121,18 +122,24 @@ class ThirdViewController: UIViewController {
             
     }
     
-    private func getAttributedText(for movie: String, with dateString: String) -> NSAttributedString {
-           let attributes: [NSAttributedString.Key: Any] = [
-               .strikethroughStyle: NSUnderlineStyle.single.rawValue, // Перечеркиваем текст
-               .foregroundColor: UIColor.white
-           ]
-           let attributedString = NSAttributedString(string: "\(movie) (Просмотрено \(dateString))", attributes: attributes)
-           return attributedString
-       }
+    @objc func anotherButtonTapped() {
+        let secondVC = SecondViewController()
+//        secondVC.
+    }
     
-    @objc func watchAgainButtonTapped() {
-           isMovieWatched = false
-       }
+//    private func getAttributedText(for movie: String, with dateString: String) -> NSAttributedString {
+//           let attributes: [NSAttributedString.Key: Any] = [
+//               .strikethroughStyle: NSUnderlineStyle.single.rawValue, // Перечеркиваем текст
+//               .foregroundColor: UIColor.white
+//           ]
+//           let attributedString = NSAttributedString(string: "\(movie) (Просмотрено \(dateString))", attributes: attributes)
+//           return attributedString
+//       }
     
+    
+//    @objc func watchAgainButtonTapped() {
+//           isMovieWatched = false
+//       }
+//
     
 }
