@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = #colorLiteral(red: 0.2271139026, green: 0.2424737215, blue: 0.2698594034, alpha: 1)
+
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -42,6 +42,7 @@ class ViewController: UIViewController {
         }
     
     func setupViews() {
+        view.backgroundColor = #colorLiteral(red: 0.2271139026, green: 0.2424737215, blue: 0.2698594034, alpha: 1)
 
         view.addSubview(backButton)
         backButton.translatesAutoresizingMaskIntoConstraints = false
@@ -100,6 +101,13 @@ class ViewController: UIViewController {
         secondVC.movies = movies
         navigationController?.pushViewController(secondVC, animated: true)
     }
+    
+    func randomFilm(third: ThirdViewController) {
+           if let randomFilm = movies.randomElement() {
+               third.nameLabel.text = randomFilm
+           }
+
+    }
 }
 
 
@@ -129,10 +137,5 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-//    func randomFilm(third: ThirdViewController) {
-//           if let randomFilm = movies.randomElement() {
-//               third.nameLabel.text = randomFilm
-//           }
-//
-//    }
+
 }

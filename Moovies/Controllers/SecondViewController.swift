@@ -15,7 +15,7 @@ class SecondViewController: UIViewController {
         button.setTitleColor(#colorLiteral(red: 0.462745098, green: 0.8745098039, blue: 0.9294117647, alpha: 1), for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(randomButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -54,7 +54,11 @@ class SecondViewController: UIViewController {
     }
     
     
-    @objc func addButtonTapped() {
-
+    @objc func randomButtonTapped() {
+        let firstVC = ViewController()
+        let thirdVC = ThirdViewController() // Передаем массив фильмов в инициализатор ThirdViewController
+        firstVC.randomFilm(third: thirdVC)
+            navigationController?.pushViewController(thirdVC, animated: true)
         }
+    
 }

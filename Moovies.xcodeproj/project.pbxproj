@@ -62,8 +62,8 @@
 		86DD4A202A811227009194C5 /* Moovies */ = {
 			isa = PBXGroup;
 			children = (
-				86DD4A3E2A81163D009194C5 /* Scene */,
 				86DD4A3D2A811602009194C5 /* Controllers */,
+				86DD4A3E2A81163D009194C5 /* Scene */,
 				86DD4A2A2A811228009194C5 /* Assets.xcassets */,
 				86DD4A2C2A811228009194C5 /* LaunchScreen.storyboard */,
 				86DD4A2F2A811228009194C5 /* Info.plist */,
