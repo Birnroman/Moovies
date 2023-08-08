@@ -120,14 +120,7 @@ class ViewController: UIViewController {
         navigationController?.pushViewController(onboardingVC, animated: true)
     }
     
-//    func randomFilm() -> String? {
-//        if let randomFilm = movies.randomElement() {
-//            return randomFilm
-//        } else {
-//            return nil
-//        }
-//        
-//    }
+
 }
 
 
