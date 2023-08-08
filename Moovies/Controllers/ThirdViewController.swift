@@ -36,10 +36,7 @@ class ThirdViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-//    var isMovieWatched: Bool = false
-//
-//    var completionHandler: ((String) -> Void)? // Замыкание для передачи выбранного фильма обратно в ViewController
-      
+
     
     let countLabel: UILabel = {
         let label = UILabel()
@@ -138,20 +135,5 @@ class ThirdViewController: UIViewController {
             nameLabel.text = selected
         }
     }
-    
-//    private func getAttributedText(for movie: String, with dateString: String) -> NSAttributedString {
-//           let attributes: [NSAttributedString.Key: Any] = [
-//               .strikethroughStyle: NSUnderlineStyle.single.rawValue, // Перечеркиваем текст
-//               .foregroundColor: UIColor.white
-//           ]
-//           let attributedString = NSAttributedString(string: "\(movie) (Просмотрено \(dateString))", attributes: attributes)
-//           return attributedString
-//       }
-    
-    
-//    @objc func watchAgainButtonTapped() {
-//           isMovieWatched = false
-//       }
-//
     
 }

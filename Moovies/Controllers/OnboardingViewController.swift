@@ -147,7 +147,7 @@ class OnboardingViewController: UIViewController {
         let margins = view.safeAreaLayoutGuide
         
         // констрейнты для лого
-        logoImageView.topAnchor.constraint(equalTo: margins.topAnchor, constant: 28).isActive                               = true
+        logoImageView.topAnchor.constraint(equalTo: margins.topAnchor, constant: 8).isActive                               = true
         logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive                                        = true
         logoImageView.heightAnchor.constraint(equalToConstant: 70).isActive                                                 = true
         
