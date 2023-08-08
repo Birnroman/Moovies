@@ -55,9 +55,20 @@ class SecondViewController: UIViewController {
     
     
     @objc func randomButtonTapped() {
-        let thirdVC = ThirdViewController() // Передаем массив фильмов в инициализатор ThirdViewController
-        thirdVC.nameLabel.text = movies.randomElement()
-        navigationController?.pushViewController(thirdVC, animated: true)
-        
+        if let selected = movies.randomElement() {
+            let thirdVC = ThirdViewController(movies: movies, selectedMovie: selected)
+            thirdVC.nameLabel.text = selected
+            navigationController?.pushViewController(thirdVC, animated: true)
+        }
+//        navigationController?.pushViewController(thirdVC, animated: true)
     }
+    
+//    func randomFilm(thirdVC: ThirdViewController) {
+////        let thirdVC = ThirdViewController()
+//        if let random = movies.randomElement() {
+//            thirdVC.nameLabel.text = random
+//            navigationController?.pushViewController(thirdVC, animated: true)
+//        }
+//    }
+    
 }

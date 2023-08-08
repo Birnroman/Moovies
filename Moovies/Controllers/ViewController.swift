@@ -2,7 +2,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    // MARK: Properties
+    // MARK: -Properties
     
     var movies = [String]()
     var watchedMovies: [String: Date] = [:] // Словарь для хранения информации о просмотренных фильмах
@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     
     
     
-    // MARK: Functions
+    // MARK: -Functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -113,7 +113,7 @@ class ViewController: UIViewController {
 }
 
 
-// MARK: Extensions
+// MARK: -Extensions
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -138,6 +138,4 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
-    
-
 }

@@ -1,6 +1,18 @@
 import UIKit
 class ThirdViewController: UIViewController {
     
+    var movies: [String] = []
+    var selectedMovie: String? // Свойство для хранения выбранного случайного фильма
+    
+    init(movies: [String], selectedMovie: String? = nil) {
+        self.movies = movies
+        self.selectedMovie = selectedMovie
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     let background: UIImageView = {
         let backgroundImage = UIImageView(image: UIImage(named: "background"))
@@ -24,10 +36,9 @@ class ThirdViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    var isMovieWatched: Bool = false
-
-    var selectedMovie: String?
-    var completionHandler: ((String) -> Void)? // Замыкание для передачи выбранного фильма обратно в ViewController
+//    var isMovieWatched: Bool = false
+//
+//    var completionHandler: ((String) -> Void)? // Замыкание для передачи выбранного фильма обратно в ViewController
       
     
     let countLabel: UILabel = {
@@ -123,8 +134,9 @@ class ThirdViewController: UIViewController {
     }
     
     @objc func anotherButtonTapped() {
-        let secondVC = SecondViewController()
-//        secondVC.
+        if let selected = movies.randomElement() {
+            nameLabel.text = selected
+        }
     }
     
 //    private func getAttributedText(for movie: String, with dateString: String) -> NSAttributedString {
