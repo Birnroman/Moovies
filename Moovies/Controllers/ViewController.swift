@@ -4,7 +4,7 @@ class ViewController: UIViewController {
 
     // MARK: -Properties
     
-    var movies = [String]()
+    var movies = [Movie]()
     var watchedMovies: [String: Date] = [:] // Словарь для хранения информации о просмотренных фильмах
     
     let tableView = UITableView()
@@ -43,6 +43,7 @@ class ViewController: UIViewController {
 
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(MovieTableViewCell.self, forCellReuseIdentifier: "Cell")
         
         setupViews()
         setupConstrains()
@@ -97,7 +98,8 @@ class ViewController: UIViewController {
         
         let addAction = UIAlertAction(title: "Добавить", style: .default) { [weak self] _ in
             guard let textField = alert.textFields?.first, let text = textField.text, !text.isEmpty else { return }
-            self?.movies.append(text)
+            let movie = Movie(name: text)
+            self?.movies.append(movie)
             self?.tableView.reloadData()
         }
         
@@ -119,8 +121,6 @@ class ViewController: UIViewController {
         let onboardingVC = OnboardingViewController()
         navigationController?.pushViewController(onboardingVC, animated: true)
     }
-    
-
 }
 
 
@@ -132,10 +132,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MovieTableViewCell
+        
+        let movie = movies[indexPath.row]
         cell.backgroundColor = #colorLiteral(red: 0.2271139026, green: 0.2424737215, blue: 0.2698594034, alpha: 1)
-        cell.textLabel?.textColor = .white
-        cell.textLabel?.text = movies[indexPath.row]
+//        cell.textLabel?.textColor = .white
+        cell.textLabel?.text = movie.name
+        cell.isWatchedLabel.text = movie.isWatched ? "Просмотрено" : "Не просмотрено"
+        cell.numberOfWatchLabel.text = "Просмотров: \(movie.numberOfViews)"
         return cell
     }
     

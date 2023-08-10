@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		866B107A2A84F068005B4B8A /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866B10792A84F068005B4B8A /* MovieTableViewCell.swift */; };
 		86DD4A222A811227009194C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DD4A212A811227009194C5 /* AppDelegate.swift */; };
 		86DD4A242A811227009194C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DD4A232A811227009194C5 /* SceneDelegate.swift */; };
 		86DD4A262A811227009194C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DD4A252A811227009194C5 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		866B10792A84F068005B4B8A /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		86DD4A1E2A811227009194C5 /* Moovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86DD4A212A811227009194C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86DD4A232A811227009194C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				86DD4A252A811227009194C5 /* ViewController.swift */,
+				866B10792A84F068005B4B8A /* MovieTableViewCell.swift */,
 				86DD4A3F2A81F1B3009194C5 /* Movie.swift */,
 				86DD4A372A81143F009194C5 /* SecondViewController.swift */,
 				86DD4A392A811555009194C5 /* ThirdViewController.swift */,
@@ -167,6 +170,7 @@
 			files = (
 				86DD4A262A811227009194C5 /* ViewController.swift in Sources */,
 				86DD4A222A811227009194C5 /* AppDelegate.swift in Sources */,
+				866B107A2A84F068005B4B8A /* MovieTableViewCell.swift in Sources */,
 				86DD4A242A811227009194C5 /* SceneDelegate.swift in Sources */,
 				86DD4A3C2A811578009194C5 /* Colors.swift in Sources */,
 				86DD4A382A81143F009194C5 /* SecondViewController.swift in Sources */,
