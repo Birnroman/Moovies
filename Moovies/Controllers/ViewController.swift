@@ -5,7 +5,7 @@ class ViewController: UIViewController {
     // MARK: -Properties
     
     var movies = [Movie]()
-    var watchedMovies: [String: Date] = [:] // Словарь для хранения информации о просмотренных фильмах
+//    var watchedMovies: [String: Date] = [:] // Словарь для хранения информации о просмотренных фильмах
     
     let tableView = UITableView()
     
@@ -78,7 +78,7 @@ class ViewController: UIViewController {
             backButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             
             
-            tableView.topAnchor.constraint(equalTo: backButton.bottomAnchor),
+            tableView.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: 16),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: addButton.topAnchor, constant: 16),
@@ -137,9 +137,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let movie = movies[indexPath.row]
         cell.backgroundColor = #colorLiteral(red: 0.2271139026, green: 0.2424737215, blue: 0.2698594034, alpha: 1)
 //        cell.textLabel?.textColor = .white
-        cell.textLabel?.text = movie.name
-        cell.isWatchedLabel.text = movie.isWatched ? "Просмотрено" : "Не просмотрено"
-        cell.numberOfWatchLabel.text = "Просмотров: \(movie.numberOfViews)"
+        cell.nameLabel.text = movie.name
+        cell.countLabel.text = "Просмотров: \(movie.numberOfViews)"
         return cell
     }
     
