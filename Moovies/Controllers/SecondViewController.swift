@@ -3,7 +3,7 @@ import UIKit
 class SecondViewController: UIViewController {
     
     var movies: [Movie] = []
-    var selectedMovie: String? // Свойство для хранения выбранного случайного фильма
+//    var selectedMovie: String? // Свойство для хранения выбранного случайного фильма
     
     
     lazy var randomButton: UIButton = {
@@ -56,7 +56,7 @@ class SecondViewController: UIViewController {
     
     @objc func randomButtonTapped() {
         if let selected = movies.randomElement() {
-            let thirdVC = ThirdViewController(movies: movies, selectedMovie: selected.name)
+            let thirdVC = ThirdViewController(movies: movies, selectedMovie: selected)
             thirdVC.nameLabel.text = selected.name
             navigationController?.pushViewController(thirdVC, animated: true)
         }

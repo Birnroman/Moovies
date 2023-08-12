@@ -2,9 +2,9 @@ import UIKit
 class ThirdViewController: UIViewController {
     
     var movies: [Movie] = []
-    var selectedMovie: String? // Свойство для хранения выбранного случайного фильма
+    var selectedMovie: Movie? // Свойство для хранения выбранного случайного фильма
     
-    init(movies: [Movie], selectedMovie: String? = nil) {
+    init(movies: [Movie], selectedMovie: Movie? = nil) {
         self.movies = movies
         self.selectedMovie = selectedMovie
         super.init(nibName: nil, bundle: nil)
@@ -123,16 +123,20 @@ class ThirdViewController: UIViewController {
         ])
     }
     
-
-    
     
     @objc func okButtonTapped() {
-            
+        guard let selected = selectedMovie else { return }
+        selected.isWatched = true
+        selected.numberOfViews += 1
+        
+        selectedMovie = selected
     }
     
     @objc func anotherButtonTapped() {
         if let selected = movies.randomElement() {
             nameLabel.text = selected.name
+            selectedMovie = selected
+
         }
     }
     
