@@ -24,15 +24,6 @@ class ViewController: UIViewController {
         return button
     }()
     
-    lazy var goOnboardingButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("К стартовому", for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(goOnboardingButtonTapped), for: .touchUpInside)
-        return button
-    }()
-    
-    
     
     
     // MARK: -Functions
@@ -53,8 +44,6 @@ class ViewController: UIViewController {
     func setupViews() {
         view.backgroundColor = #colorLiteral(red: 0.2271139026, green: 0.2424737215, blue: 0.2698594034, alpha: 1)
         
-        view.addSubview(goOnboardingButton)
-
         view.addSubview(backButton)
         backButton.translatesAutoresizingMaskIntoConstraints = false
         
@@ -71,8 +60,7 @@ class ViewController: UIViewController {
     func setupConstrains() {
         NSLayoutConstraint.activate([
             
-            goOnboardingButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 80),
-            goOnboardingButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+    
             
             backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 80),
             backButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
